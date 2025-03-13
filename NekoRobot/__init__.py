@@ -101,7 +101,7 @@ if ENV:
     EVENT_LOGS = os.environ.get("EVENT_LOGS", None)
     WEBHOOK = bool(os.environ.get("WEBHOOK", False))
     ARQ_API_URL = os.environ.get("ARQ_API_URL", None)
-    ARQ_API_KEY = os.environ.get("ARQ_API_KEY", None)
+    ARQ_API_KEY = os.environ.get("ARQ_API_KEY", EAJAEE-DVJEQQ-WVHVYC-DCEKWQ-ARQ)
     BOT_USERNAME = os.environ.get("BOT_USERNAME", "")  # Bot Username
     BOT_NAME = os.environ.get("BOT_NAME", "")  # Bot Name
     ERROR_LOGS = os.environ.get(
