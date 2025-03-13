@@ -64,15 +64,15 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 6:
 ENV = bool(os.environ.get("ENV", False))
 
 if ENV:
-    TOKEN = os.environ.get("TOKEN", 7766680940:AAFRLQDTwpbreK-dZ-kk8fupB6tHkMBwk2g)
+    TOKEN = os.environ.get("TOKEN", None)
 
     try:
-        OWNER_ID = int(os.environ.get("OWNER_ID", 7543269959))
+        OWNER_ID = int(os.environ.get("OWNER_ID", None))
     except ValueError:
         raise Exception("Your OWNER_ID env variable is not a valid integer.")
 
-    JOIN_LOGGER = os.environ.get("JOIN_LOGGER", -1002433706955)
-    OWNER_USERNAME = os.environ.get("OWNER_USERNAME", 7543269959)
+    JOIN_LOGGER = os.environ.get("JOIN_LOGGER", None)
+    OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
 
     try:
         DRAGONS = {int(x) for x in os.environ.get("DRAGONS", "").split()}
@@ -98,18 +98,20 @@ if ENV:
     INFOPIC = bool(
         os.environ.get("INFOPIC", True)
     )  # Info Pic (use True[Value] If You Want To Show In /info.)
-    EVENT_LOGS = os.environ.get("EVENT_LOGS", -1002433706955)
+    EVENT_LOGS = os.environ.get("EVENT_LOGS", None)
     WEBHOOK = bool(os.environ.get("WEBHOOK", False))
     ARQ_API_URL = os.environ.get("ARQ_API_URL", None)
     ARQ_API_KEY = os.environ.get("ARQ_API_KEY", None)
-    BOT_USERNAME = os.environ.get("BOT_USERNAME", "Test DBjson_bbot")  # Bot Username
-    BOT_NAME = os.environ.get("BOT_NAME", "aalu")  # Bot Name
-    ERROR_LOGS = os.environ.get("ERROR_LOGS", -1002433706955)  # Error Logs (Channel Or Group Choice Is Yours)
+    BOT_USERNAME = os.environ.get("BOT_USERNAME", "")  # Bot Username
+    BOT_NAME = os.environ.get("BOT_NAME", "")  # Bot Name
+    ERROR_LOGS = os.environ.get(
+        "ERROR_LOGS", None
+    )  # Error Logs (Channel Or Group Choice Is Yours)
     URL = os.environ.get("URL", "")  # Does not contain token
-    PORT = int(os.environ.get("PORT", 8080))
+    PORT = int(os.environ.get("PORT", 5000))
     CERT_PATH = os.environ.get("CERT_PATH")
-    API_ID = os.environ.get("API_ID", 24810254)
-    API_HASH = os.environ.get("API_HASH", aadb42caec01695fa0a77c09b3e0ef47)
+    API_ID = os.environ.get("API_ID", None)
+    API_HASH = os.environ.get("API_HASH", None)
     STRING_SESSION = os.environ.get("STRING_SESSION", None)
     DB_URI = os.environ.get("DATABASE_URL")
     SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
@@ -117,7 +119,7 @@ if ENV:
     LOAD = os.environ.get("LOAD", "").split()
     NO_LOAD = os.environ.get("NO_LOAD", "translation").split()
     DEL_CMDS = bool(os.environ.get("DEL_CMDS", False))
-    STRICT_GBAN = bool(os.environ.get("STRICT_GBAN", True))
+    STRICT_GBAN = bool(os.environ.get("STRICT_GBAN", False))
     WORKERS = int(os.environ.get("WORKERS", 8))
     BAN_STICKER = os.environ.get("BAN_STICKER", "CAADAgADOwADPPEcAXkko5EB3YGYAg")
     ALLOW_EXCL = os.environ.get("ALLOW_EXCL", False)
